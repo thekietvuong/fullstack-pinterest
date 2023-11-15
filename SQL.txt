@@ -1,0 +1,40 @@
+//tao bang users
+CREATE TABLE users(
+    user_id INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(150),
+    password VARCHAR(150),
+    full_name VARCHAR(150),    
+    age INT,
+    avatar BLOB
+);
+
+//tao bang images
+CREATE TABLE images(
+    image_id INT AUTO_INCREMENT PRIMARY KEY,
+    image_name VARCHAR(255),
+    image_path VARCHAR(255),
+    image_desc VARCHAR(255),
+	user_id INT,
+	FOREIGN KEY (user_id) REFERENCES users(user_id)
+);
+
+//tao bang comments
+CREATE TABLE comments(
+    comment_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT,
+    image_id INT,
+    comment_date DATE,  
+    content BLOB,
+    FOREIGN KEY (user_id) REFERENCES users(user_id),
+    FOREIGN KEY (image_id) REFERENCES images(image_id)
+);
+
+//tao bang luu anh
+CREATE TABLE save_image(
+    sav_img_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT,
+    image_id INT,
+    saving_date DATE,  
+    FOREIGN KEY (user_id) REFERENCES users(user_id),
+    FOREIGN KEY (image_id) REFERENCES images(image_id)
+);

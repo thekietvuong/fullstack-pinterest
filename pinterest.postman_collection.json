@@ -1,0 +1,493 @@
+{
+	"info": {
+		"_postman_id": "63ec12f2-94c1-4205-bcc0-b1d60d8e34b3",
+		"name": "pinterest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28678590"
+	},
+	"item": [
+		{
+			"name": "Đăng ký",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"vuongthekiet4@gmail.com\",\r\n    \"password\": \"123456\",\r\n    \"full_name\": \"Vuong The Kiet\",\r\n    \"birthday\": \"1996-02-15\",\r\n    \"avatar\": \"myImage.png\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/users/sign-up",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"sign-up"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Đăng nhập",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"vuongthekiet1@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lấy danh sách ảnh",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/images/get-images",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"images",
+						"get-images"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Tìm kiếm ảnh theo tên",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/images/find-images?findName=Bio",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"images",
+						"find-images"
+					],
+					"query": [
+						{
+							"key": "findName",
+							"value": "Bio"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get thông tin ảnh và người dùng",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjksImVtYWlsIjoibmlrYXNoYWthcmFtaUBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCQub0dPWnQ0akNEOTdYWk0zREFXN0Z1NTZ4QWhjeDNra2g4NXVhdUo1ZkhOVk9xR3BUNlN5TyJ9LCJpYXQiOjE2OTk2MjM4ODgsImV4cCI6MTcwMDA1NTg4OH0.6ByLq2N9-9-2eP0h_TOMjU8u4b6oalXu7Cxxv88w3vA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/images/image-details/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"images",
+						"image-details",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get bình luận theo ảnh",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjIwLCJlbWFpbCI6InRoZWtpZXR2dW9uZ0BnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCQ5LzgwckcvV0pzOVJQb3BXVVF4NlhlT1JqVkxBNHZhUmlzLkUzcngxR1diS05EODNuQ0ZaNiJ9LCJpYXQiOjE3MDAwNTMzMzEsImV4cCI6MTcwMDEzOTczMX0.rq6wf2DBYaO7u598uLpYYTLz8vWCcGqN3K05z_TeIQI",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/comments/get-comment/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"comments",
+						"get-comment",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Lưu ảnh",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjIwLCJlbWFpbCI6InRoZWtpZXR2dW9uZ0BnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCQ5LzgwckcvV0pzOVJQb3BXVVF4NlhlT1JqVkxBNHZhUmlzLkUzcngxR1diS05EODNuQ0ZaNiJ9LCJpYXQiOjE3MDAwNTMzMzEsImV4cCI6MTcwMDEzOTczMX0.rq6wf2DBYaO7u598uLpYYTLz8vWCcGqN3K05z_TeIQI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\": 1,\r\n    \"image_id\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/saveImg/save-image",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"saveImg",
+						"save-image"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get ảnh đã lưu hay chưa",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjIwLCJlbWFpbCI6InRoZWtpZXR2dW9uZ0BnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCQ5LzgwckcvV0pzOVJQb3BXVVF4NlhlT1JqVkxBNHZhUmlzLkUzcngxR1diS05EODNuQ0ZaNiJ9LCJpYXQiOjE3MDAwMTgwNjEsImV4cCI6MTcwMDEwNDQ2MX0.UklVEeqJR0qQiqj691MANt-6aYWwsU5zvHoel1gdxDI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/saveImg/save-image?image_id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"saveImg",
+						"save-image"
+					],
+					"query": [
+						{
+							"key": "image_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post bình luận",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjIwLCJlbWFpbCI6InRoZWtpZXR2dW9uZ0BnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCQ5LzgwckcvV0pzOVJQb3BXVVF4NlhlT1JqVkxBNHZhUmlzLkUzcngxR1diS05EODNuQ0ZaNiJ9LCJpYXQiOjE3MDAwMTgwNjEsImV4cCI6MTcwMDEwNDQ2MX0.UklVEeqJR0qQiqj691MANt-6aYWwsU5zvHoel1gdxDI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"image_id\": 1,\r\n    \"content\": \"Wow\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/comments/post-comment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"comments",
+						"post-comment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get thông tin user",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjIwLCJlbWFpbCI6InRoZWtpZXR2dW9uZ0BnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCQ5LzgwckcvV0pzOVJQb3BXVVF4NlhlT1JqVkxBNHZhUmlzLkUzcngxR1diS05EODNuQ0ZaNiJ9LCJpYXQiOjE3MDAwMTgwNjEsImV4cCI6MTcwMDEwNDQ2MX0.UklVEeqJR0qQiqj691MANt-6aYWwsU5zvHoel1gdxDI",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/users/20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"20"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get danh sách ảnh đã lưu theo user ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjIwLCJlbWFpbCI6InRoZWtpZXR2dW9uZ0BnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCQ5LzgwckcvV0pzOVJQb3BXVVF4NlhlT1JqVkxBNHZhUmlzLkUzcngxR1diS05EODNuQ0ZaNiJ9LCJpYXQiOjE3MDAwMTgwNjEsImV4cCI6MTcwMDEwNDQ2MX0.UklVEeqJR0qQiqj691MANt-6aYWwsU5zvHoel1gdxDI",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/saveImg/get-saved-images/20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"saveImg",
+						"get-saved-images",
+						"20"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get danh sách ảnh đã tạo theo user id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjIwLCJlbWFpbCI6InRoZWtpZXR2dW9uZ0BnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCQ5LzgwckcvV0pzOVJQb3BXVVF4NlhlT1JqVkxBNHZhUmlzLkUzcngxR1diS05EODNuQ0ZaNiJ9LCJpYXQiOjE3MDAwMTgwNjEsImV4cCI6MTcwMDEwNDQ2MX0.UklVEeqJR0qQiqj691MANt-6aYWwsU5zvHoel1gdxDI",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/images/get-images/20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"images",
+						"get-images",
+						"20"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "xóa ảnh đã tạo",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjIwLCJlbWFpbCI6InRoZWtpZXR2dW9uZ0BnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCQ5LzgwckcvV0pzOVJQb3BXVVF4NlhlT1JqVkxBNHZhUmlzLkUzcngxR1diS05EODNuQ0ZaNiJ9LCJpYXQiOjE3MDAwMTgwNjEsImV4cCI6MTcwMDEwNDQ2MX0.UklVEeqJR0qQiqj691MANt-6aYWwsU5zvHoel1gdxDI",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/images/delete-image/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"images",
+						"delete-image",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post ảnh",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjIwLCJlbWFpbCI6InRoZWtpZXR2dW9uZ0BnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCQ5LzgwckcvV0pzOVJQb3BXVVF4NlhlT1JqVkxBNHZhUmlzLkUzcngxR1diS05EODNuQ0ZaNiJ9LCJpYXQiOjE3MDAwNTMzMzEsImV4cCI6MTcwMDEzOTczMX0.rq6wf2DBYaO7u598uLpYYTLz8vWCcGqN3K05z_TeIQI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/D:/myData/CyberSoft/pinterest/server/public/img/Artboard 3.png"
+						},
+						{
+							"key": "image_name",
+							"value": "Iron man",
+							"type": "text"
+						},
+						{
+							"key": "image_desc",
+							"value": "Super hero",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/images/upload-image",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"images",
+						"upload-image"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Chỉnh sửa thông tin user",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJfaWQiOjIwLCJlbWFpbCI6InRoZWtpZXR2dW9uZ0BnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCQ5LzgwckcvV0pzOVJQb3BXVVF4NlhlT1JqVkxBNHZhUmlzLkUzcngxR1diS05EODNuQ0ZaNiJ9LCJpYXQiOjE3MDAwNTMzMzEsImV4cCI6MTcwMDEzOTczMX0.rq6wf2DBYaO7u598uLpYYTLz8vWCcGqN3K05z_TeIQI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "avatar",
+							"type": "file",
+							"src": "/C:/Users/Admin/OneDrive/Máy tính/349191591_567919218856191_3947804840425955971_n.jpg"
+						},
+						{
+							"key": "full_name",
+							"value": "Vương Kiệt",
+							"type": "text"
+						},
+						{
+							"key": "birthday",
+							"value": "1996-02-15",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/users/edit-user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"edit-user"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
